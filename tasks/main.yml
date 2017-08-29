@@ -1,0 +1,20 @@
+---
+- name: "Install EPEL and deltarpm"
+  package:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  with_items:
+    - "epel-release"
+    - "deltarpm"
+
+- name: "Install base packages"
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - "htop"
+    - "screen"
+    - "vim"
+    - "bash-completion"
+    - "bash-completion-extras"

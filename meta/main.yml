@@ -1,0 +1,16 @@
+galaxy_info:
+  author: wasilak
+  description: Centos base setup
+
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  platforms:
+  - name: Centos
+    versions:
+      - 6
+
+  galaxy_tags: ["centos", "base"]
+
+dependencies: []
