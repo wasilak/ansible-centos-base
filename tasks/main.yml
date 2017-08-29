@@ -7,6 +7,7 @@
   with_items:
     - "epel-release"
     - "deltarpm"
+    - "yum-utils"
 
 - name: "Install base packages"
   package:
