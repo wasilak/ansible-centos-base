@@ -1,13 +1,14 @@
 ---
 - name: "Install EPEL and deltarpm"
   package:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
     state: latest
     update_cache: yes
   with_items:
-    - "epel-release"
-    - "deltarpm"
-    - "yum-utils"
+    - { name: "epel-release", distribution: ["CentOS"] }
+    - { name: "deltarpm", distribution: ["CentOS", "Amazon"] }
+    - { name: "yum-utils", distribution: ["CentOS", "Amazon"] }
+  when: hostvars[inventory_hostname]["ansible_distribution"] in item.distribution
 
 - name: "Install base packages"
   package:
